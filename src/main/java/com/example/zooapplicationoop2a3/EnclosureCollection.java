@@ -1,7 +1,10 @@
 package com.example.zooapplicationoop2a3;
 
+import java.util.List;
+
 /**
- * has a {@code get()} method.
+ * Represents a component
+ * @author Olivier Bachand
  */
 public interface EnclosureCollection {
     /**
@@ -10,4 +13,10 @@ public interface EnclosureCollection {
      * @return An {@link Object} from a list,
      */
     Object get(int i);
+
+    /**
+     * Gets the names of the EnclosureCollections
+     * @return a {@link List} of names
+     */
+    List<String> getNames();
 }
