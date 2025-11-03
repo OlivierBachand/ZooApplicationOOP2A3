@@ -3,7 +3,7 @@ package com.example.zooapplicationoop2a3;
 import java.util.List;
 
 /**
- * Represents a component
+ * Represents a component.
  * @author Olivier Bachand
  */
 public interface EnclosureCollection {
@@ -15,8 +15,8 @@ public interface EnclosureCollection {
     Object get(int i);
 
     /**
-     * Gets the names of the EnclosureCollections
-     * @return a {@link List} of names
+     * Gets the items of the EnclosureCollections as strings.
+     * @return a {@link List} of strings each containing a name and/or other information.
      */
     List<String> getItems();
 }
