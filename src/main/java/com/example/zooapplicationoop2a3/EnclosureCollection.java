@@ -18,5 +18,5 @@ public interface EnclosureCollection {
      * Gets the names of the EnclosureCollections
      * @return a {@link List} of names
      */
-    List<String> getNames();
+    List<String> getItems();
 }

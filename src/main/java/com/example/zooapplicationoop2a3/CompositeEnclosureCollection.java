@@ -17,7 +17,7 @@ public class CompositeEnclosureCollection implements EnclosureCollection {
     }
 
     @Override
-    public List<String> getNames() {
+    public List<String> getItems() {
         List<String> names = new ArrayList<>();
         for (EnclosureCollection enclosureCollection : this.aEnclosureCollections) {
             if (enclosureCollection instanceof CompositeEnclosureCollection) {
