@@ -20,7 +20,6 @@ public class ZooController {
         Parent view = fxmlLoader.load();
         CompositeEnclosureCollectionController newCECController = fxmlLoader.getController();
         newCECController.setCEC(bigCats);
-        newCECController.initialize();
         Scene nextScene = new Scene(view, 500, 500);
         Stage nextStage = new Stage();
         nextStage.setScene(nextScene);
