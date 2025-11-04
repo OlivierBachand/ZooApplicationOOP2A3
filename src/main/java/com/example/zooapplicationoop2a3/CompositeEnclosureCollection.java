@@ -16,18 +16,26 @@ public class CompositeEnclosureCollection implements EnclosureCollection {
         this.aEnclosureCollections.add(pEnclosureCollection);
     }
 
+    public void add(EnclosureCollection pEnclosureCollection) {
+        this.aEnclosureCollections.add(pEnclosureCollection);
+    }
+
+    public void remove(int pIndex) {
+        this.aEnclosureCollections.remove(pIndex);
+    }
+
     @Override
     public List<String> getItems() {
-        List<String> names = new ArrayList<>();
+        List<String> items = new ArrayList<>();
         for (EnclosureCollection enclosureCollection : this.aEnclosureCollections) {
             if (enclosureCollection instanceof CompositeEnclosureCollection) {
-                names.add(((CompositeEnclosureCollection) enclosureCollection).aName);
+                items.add(((CompositeEnclosureCollection) enclosureCollection).aName);
             }
 //            else {
-//                names.add(((Enclosure) enclosureCollection).aName);
+//                items.add(((Enclosure) enclosureCollection).aName);
 //            }
         }
-        return names;
+        return items;
     }
 
     @Override
