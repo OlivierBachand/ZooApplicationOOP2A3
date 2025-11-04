@@ -1,5 +1,7 @@
 package com.example.zooapplicationoop2a3;
 
+import javafx.collections.ObservableList;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,14 +16,6 @@ public class CompositeEnclosureCollection implements EnclosureCollection {
 
     public void addCollection(EnclosureCollection pEnclosureCollection) {
         this.aEnclosureCollections.add(pEnclosureCollection);
-    }
-
-    public void add(EnclosureCollection pEnclosureCollection) {
-        this.aEnclosureCollections.add(pEnclosureCollection);
-    }
-
-    public void remove(int pIndex) {
-        this.aEnclosureCollections.remove(pIndex);
     }
 
     @Override
@@ -39,7 +33,12 @@ public class CompositeEnclosureCollection implements EnclosureCollection {
     }
 
     @Override
-    public Object get(int i) {
-        return this.aEnclosureCollections.get(i);
+    public String getName() {
+        return this.aName;
+    }
+
+    @Override
+    public EnclosureCollection getEnclosureCollection(int pIndex) {
+        return this.aEnclosureCollections.get(pIndex);
     }
 }

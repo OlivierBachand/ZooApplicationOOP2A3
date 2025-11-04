@@ -8,15 +8,20 @@ import java.util.List;
  */
 public interface EnclosureCollection {
     /**
-     * Gets an {@link Object} from a list at a certain index.
-     * @param i index
-     * @return An {@link Object} from a list,
+     * Gets the {@code aName} of the instance
+     * @return An {@link String} containing the name.
      */
-    Object get(int i);
+    String getName();
 
     /**
      * Gets the items of the EnclosureCollections as strings.
      * @return a {@link List} of strings each containing a name and/or other information.
      */
     List<String> getItems();
+
+    /**
+     * Gets a EnclosureCollection from a list with the index.
+     * @return an {@link EnclosureCollection}.
+     */
+    EnclosureCollection getEnclosureCollection(int pIndex);
 }
