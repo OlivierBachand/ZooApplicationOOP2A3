@@ -36,4 +36,9 @@ public class CompositeEnclosureCollection implements EnclosureCollection {
     public String getName() {
         return this.aName;
     }
+
+    @Override
+    public EnclosureCollection getEnclosureCollection(int pIndex) {
+        return this.aEnclosureCollections.get(pIndex);
+    }
 }

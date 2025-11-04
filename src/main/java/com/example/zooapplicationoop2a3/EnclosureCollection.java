@@ -18,4 +18,10 @@ public interface EnclosureCollection {
      * @return a {@link List} of strings each containing a name and/or other information.
      */
     List<String> getItems();
+
+    /**
+     * Gets a EnclosureCollection from a list with the index.
+     * @return an {@link EnclosureCollection}.
+     */
+    EnclosureCollection getEnclosureCollection(int pIndex);
 }
