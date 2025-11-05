@@ -19,6 +19,10 @@ public abstract class Animal {
     public int getAge() {
         return aAge;
     }
+    
+    public void setName(String pName) {
+        this.aName = pName;
+    }
 
     public void setAge(int pAge) {
 
