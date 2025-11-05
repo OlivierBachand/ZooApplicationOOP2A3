@@ -38,7 +38,7 @@ public class CompositeEnclosureCollection implements EnclosureCollection {
     }
 
     @Override
-    public EnclosureCollection getEnclosureCollection(int pIndex) {
+    public EnclosureCollection get(int pIndex) {
         return this.aEnclosureCollections.get(pIndex);
     }
 }

@@ -10,7 +10,7 @@ public class ZooController {
 
     @FXML
     protected void onViewButtonClick(ActionEvent pEvent) throws IOException {
-        CompositeEnclosureCollectionController.newCompositeEnclosureCollectionView(pEvent, bigCats, bigCats.getName());
+        EnclosureController.newCompositeEnclosureCollectionView(pEvent, bigCats, bigCats.getName());
     }
 
 }
