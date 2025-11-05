@@ -25,6 +25,17 @@ public class CompositeEnclosureCollectionController {
     @FXML
     public Label aBreadCrumbsLabel;
 
+    public void initialize() {
+        aCECListView.setOnMouseClicked(pEvent -> {
+            if (pEvent.getClickCount() == 2) {
+                String selectedItem = aCECListView.getSelectionModel().getSelectedItem();
+                if (selectedItem != null) {
+                    this.aOpenButton.fire();
+                }
+            }
+        });
+    }
+
     public void setCEC(CompositeEnclosureCollection pCEC) {
         this.aCEC = pCEC;
         this.aBreadCrumbsLabel.setText(aBreadCrumbs);
