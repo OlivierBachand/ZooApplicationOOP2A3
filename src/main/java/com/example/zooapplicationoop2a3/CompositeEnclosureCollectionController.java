@@ -57,7 +57,7 @@ public class CompositeEnclosureCollectionController {
     public void onOpenButtonClick(ActionEvent pEvent) throws IOException {
         try {
             int index = aCECListView.getSelectionModel().getSelectedIndex();
-            EnclosureCollection selectedCollection = aCEC.getEnclosureCollection(index);
+            EnclosureCollection selectedCollection = aCEC.get(index);
             if (selectedCollection instanceof CompositeEnclosureCollection selectedCEC) {
                 newCompositeEnclosureCollectionView(pEvent, selectedCEC, aBreadCrumbs + " > " + selectedCEC.getName());
             }
@@ -70,9 +70,9 @@ public class CompositeEnclosureCollectionController {
     public static void newCompositeEnclosureCollectionView(ActionEvent pEvent, CompositeEnclosureCollection selectedCEC, String pBreadCrumbs) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(ZooApplication.class.getResource("cec-view.fxml"));
         Parent view = fxmlLoader.load();
-        CompositeEnclosureCollectionController newCECController = fxmlLoader.getController();
+        EnclosureController newCECController = fxmlLoader.getController();
         newCECController.aBreadCrumbs = pBreadCrumbs;
-        newCECController.setCEC(selectedCEC);
+        newCECController.setEnclosure(selectedCEC);
         Scene nextScene = new Scene(view, 500, 500);
         Stage nextStage = new Stage();
         nextStage.setScene(nextScene);

@@ -20,8 +20,8 @@ public interface EnclosureCollection {
     List<String> getItems();
 
     /**
-     * Gets a EnclosureCollection from a list with the index.
-     * @return an {@link EnclosureCollection}.
+     * Gets an Object from a list with the index.
+     * @return an {@link Object}.
      */
-    EnclosureCollection getEnclosureCollection(int pIndex);
+    Object get(int pIndex);
 }
