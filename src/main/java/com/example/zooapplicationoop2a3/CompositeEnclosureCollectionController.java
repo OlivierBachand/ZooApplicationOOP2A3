@@ -7,10 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.ListView;
+import javafx.scene.control.*;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -18,17 +15,19 @@ import java.io.IOException;
 
 public class CompositeEnclosureCollectionController {
     CompositeEnclosureCollection aCEC;
+    String aBreadCrumbs;
     @FXML
     public ListView<String> aCECListView;
 
     @FXML
     public Button aOpenButton;
 
+    @FXML
+    public Label aBreadCrumbsLabel;
+
     public void setCEC(CompositeEnclosureCollection pCEC) {
         this.aCEC = pCEC;
-        this.aCEC.addCollection(new CompositeEnclosureCollection("1"));
-        this.aCEC.addCollection(new CompositeEnclosureCollection("2"));
-        this.aCEC.addCollection(new CompositeEnclosureCollection("3"));
+        this.aBreadCrumbsLabel.setText(aBreadCrumbs);
         this.aCECListView.getItems().addAll(aCEC.getItems());
     }
 
@@ -49,7 +48,7 @@ public class CompositeEnclosureCollectionController {
             int index = aCECListView.getSelectionModel().getSelectedIndex();
             EnclosureCollection selectedCollection = aCEC.getEnclosureCollection(index);
             if (selectedCollection instanceof CompositeEnclosureCollection selectedCEC) {
-                newCompositeEnclosureCollectionView(pEvent, selectedCEC);
+                newCompositeEnclosureCollectionView(pEvent, selectedCEC, aBreadCrumbs + " > " + selectedCEC.getName());
             }
         }
         catch (IndexOutOfBoundsException e) {
@@ -57,10 +56,11 @@ public class CompositeEnclosureCollectionController {
         }
     }
 
-    public static void newCompositeEnclosureCollectionView(ActionEvent pEvent, CompositeEnclosureCollection selectedCEC) throws IOException {
+    public static void newCompositeEnclosureCollectionView(ActionEvent pEvent, CompositeEnclosureCollection selectedCEC, String pBreadCrumbs) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(ZooApplication.class.getResource("cec-view.fxml"));
         Parent view = fxmlLoader.load();
         CompositeEnclosureCollectionController newCECController = fxmlLoader.getController();
+        newCECController.aBreadCrumbs = pBreadCrumbs;
         newCECController.setCEC(selectedCEC);
         Scene nextScene = new Scene(view, 500, 500);
         Stage nextStage = new Stage();
