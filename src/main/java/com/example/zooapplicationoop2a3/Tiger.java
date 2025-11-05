@@ -1,7 +1,7 @@
 package com.example.zooapplicationoop2a3;
 
 public class Tiger extends Animal {
-public Tiger(String name, int age)
+public Tiger(String pName, int pAge)
 {
-super(name, age);}
+super(pName, pAge);}
 }

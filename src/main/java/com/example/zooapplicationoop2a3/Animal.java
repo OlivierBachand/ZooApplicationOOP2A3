@@ -1,28 +1,28 @@
 package com.example.zooapplicationoop2a3;
 
 public abstract class Animal {
-    private String name;
-    private int age;
+    private String aName;
+    private int aAge;
 
-    public Animal(String name, int age)
+    public Animal(String pName, int pAge)
     {
-        this.name =name;
-        this.age = age;
+        this.aName =pName;
+        this.aAge = pAge;
 
     }
     // getters and setters
 
     public String getName() {
-        return name;
+        return aName;
     }
 
     public int getAge() {
-        return age;
+        return aAge;
     }
 
-    public void setAge(int age) {
+    public void setAge(int pAge) {
 
-        this.age = age;
+        this.aAge = pAge;
     }
 
 
