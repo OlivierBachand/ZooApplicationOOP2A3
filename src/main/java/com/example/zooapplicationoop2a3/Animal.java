@@ -6,7 +6,7 @@ public abstract class Animal {
 
     public Animal(String pName, int pAge)
     {
-        this.aName =pName;
+        this.aName = pName;
         this.aAge = pAge;
 
     }
@@ -19,7 +19,7 @@ public abstract class Animal {
     public int getAge() {
         return aAge;
     }
-    
+
     public void setName(String pName) {
         this.aName = pName;
     }

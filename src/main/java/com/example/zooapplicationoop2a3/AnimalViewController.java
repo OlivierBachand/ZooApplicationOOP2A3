@@ -15,18 +15,14 @@ public class AnimalViewController {
 
     private Animal currentAnimal;
 
-    public void setAnimal(Animal Animal) {
-        this.currentAnimal = Animal;
-        if(Animal != null)
-        {
-            nameTextField.setText(Animal.getName());
-            ageTextField.setText(String.valueOf(Animal.getAge()));
-        }
+    public void setAnimal(Animal pAnimal) {
+        this.currentAnimal = pAnimal;
+        this.nameTextField.setText(pAnimal.getName());
+        this.ageTextField.setText(String.valueOf(pAnimal.getAge()));
     }
 
     @FXML
-    protected void onSaveButotnCLick(ActionEvent event) {
-        if (currentAnimal != null) {
+    protected void onSaveButtonCLick(ActionEvent event) {
         currentAnimal.setName(nameTextField.getText());
         try{
             currentAnimal.setAge(Integer.parseInt(ageTextField.getText()));
@@ -34,8 +30,6 @@ public class AnimalViewController {
             ageTextField.setText("Age is Invalid");
         }
         onCancelButtonClick(event);
-        }
-
     }
     @FXML
     protected void onCancelButtonClick(ActionEvent event) {
