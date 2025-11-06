@@ -60,6 +60,8 @@ public class CompositeEnclosureCollectionController {
             EnclosureCollection selectedCollection = aCEC.get(index);
             if (selectedCollection instanceof CompositeEnclosureCollection selectedCEC) {
                 newCompositeEnclosureCollectionView(pEvent, selectedCEC, aBreadCrumbs + " > " + selectedCEC.getName());
+            } else if (selectedCollection instanceof Enclosure selectedEnclosure) {
+                newEnclosureView(pEvent, selectedEnclosure, aBreadCrumbs + " > " + selectedEnclosure.getName());
             }
         }
         catch (IndexOutOfBoundsException e) {
@@ -70,13 +72,28 @@ public class CompositeEnclosureCollectionController {
     public static void newCompositeEnclosureCollectionView(ActionEvent pEvent, CompositeEnclosureCollection selectedCEC, String pBreadCrumbs) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(ZooApplication.class.getResource("cec-view.fxml"));
         Parent view = fxmlLoader.load();
-        EnclosureController newCECController = fxmlLoader.getController();
+        CompositeEnclosureCollectionController newCECController = fxmlLoader.getController();
         newCECController.aBreadCrumbs = pBreadCrumbs;
-        newCECController.setEnclosure(selectedCEC);
+        newCECController.setCEC(selectedCEC);
         Scene nextScene = new Scene(view, 500, 500);
         Stage nextStage = new Stage();
         nextStage.setScene(nextScene);
         nextStage.setTitle(selectedCEC.getName());
+        nextStage.initModality(Modality.WINDOW_MODAL);
+        nextStage.initOwner(((Node) pEvent.getSource()).getScene().getWindow());
+        nextStage.setResizable(false);
+        nextStage.showAndWait();
+    }
+    public static void newEnclosureView(ActionEvent pEvent, Enclosure selectedEnclosure, String pBreadCrumbs) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(ZooApplication.class.getResource("enclosure-view.fxml"));
+        Parent view = fxmlLoader.load();
+        EnclosureController newEnclosureController = fxmlLoader.getController();
+        newEnclosureController.aBreadCrumbs = pBreadCrumbs;
+        newEnclosureController.setEnclosure(selectedEnclosure);
+        Scene nextScene = new Scene(view, 500, 500);
+        Stage nextStage = new Stage();
+        nextStage.setScene(nextScene);
+        nextStage.setTitle(selectedEnclosure.getName());
         nextStage.initModality(Modality.WINDOW_MODAL);
         nextStage.initOwner(((Node) pEvent.getSource()).getScene().getWindow());
         nextStage.setResizable(false);

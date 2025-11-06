@@ -35,6 +35,9 @@ public class AnimalViewController {
     @FXML
     private TextField ageTextField;
 
+    @FXML
+    private TextField typeTextField;
+
     /** The currently selected {@link Animal} being viewed or edited. */
     private Animal currentAnimal;
 
@@ -56,6 +59,7 @@ public class AnimalViewController {
      * Updates the {@link Animal}'s name and age based on user input.
      * If the age input is invalid, an error message is shown in the age text field.
      * Once saving is done, the view window is closed.
+     * If there is a {@code typeTextField}, creates a new animal with the provided information instead
      * </p>
      *
      * @param event the {@link ActionEvent} triggered by clicking the Save button
@@ -67,6 +71,10 @@ public class AnimalViewController {
             currentAnimal.setAge(Integer.parseInt(ageTextField.getText()));
         } catch (NumberFormatException e) {
             ageTextField.setText("Age is Invalid");
+        }
+        if (typeTextField != null) {
+            if (typeTextField.getText().equalsIgnoreCase("cougar")) {
+            }
         }
         onCancelButtonClick(event);
     }

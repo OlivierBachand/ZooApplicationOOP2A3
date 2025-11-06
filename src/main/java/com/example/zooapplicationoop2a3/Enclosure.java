@@ -4,14 +4,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Enclosure implements EnclosureCollection {
-    private List<Animal> aAnimals;
+    private final List<Animal> aAnimals;
     private String aName;
+
+    public Enclosure(String pName) {
+        this.aAnimals = new ArrayList<>();
+        this.aName = pName;
+    }
 
     @Override
     public List<String> getItems() {
         List<String> items = new ArrayList<>();
         for (Animal animal : this.aAnimals) {
-            items.add(animal.aName);
+            items.add(animal.getName());
         }
         return items;
     }
@@ -21,7 +26,16 @@ public class Enclosure implements EnclosureCollection {
         return this.aName;
     }
 
-    public EnclosureCollection get(int pIndex) {
-        return aAnimals.get(pIndex);
+    @Override
+    public Object get(int pIndex) {
+        return this.aAnimals.get(pIndex);
+    }
+
+    public void addAnimal(Animal pAnimal) {
+        this.aAnimals.add(pAnimal);
+    }
+
+    public void removeAnimal(int pIndex) {
+        this.aAnimals.remove(pIndex);
     }
 }
