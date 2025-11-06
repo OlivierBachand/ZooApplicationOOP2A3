@@ -9,7 +9,7 @@
    <children>
       <ListView fx:id="enclosureListView" layoutX="91.0" layoutY="66.0" prefHeight="307.0" prefWidth="319.0" />
       <Button layoutX="14.0" layoutY="22.0" mnemonicParsing="false" onAction="#onBackButtonClick" text="Back" />
-      <Button layoutX="206.0" layoutY="432.0" mnemonicParsing="false" onAction="#onEditButtonClick" prefHeight="25.0" prefWidth="90.0" text="Edit" />
+      <Button fx:id="editButton" layoutX="206.0" layoutY="432.0" mnemonicParsing="false" onAction="#onEditButtonClick" prefHeight="25.0" prefWidth="90.0" text="Edit" />
       <Button layoutX="441.0" layoutY="22.0" mnemonicParsing="false" onAction="#onCloseButtonClick" text="Close" />
       <Label fx:id="breadCrumbsLabel" layoutX="91.0" layoutY="26.0" prefHeight="17.0" prefWidth="319.0" />
       <Button layoutX="320.0" layoutY="432.0" mnemonicParsing="false" onAction="#onAddButtonClick" prefHeight="25.0" prefWidth="90.0" text="Add" />

@@ -1,6 +1,8 @@
 package com.example.zooapplicationoop2a3;
 
 import javafx.application.Platform;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,6 +14,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Collections;
 
 public class EnclosureController {
     Enclosure enclosure;
@@ -58,7 +61,7 @@ public class EnclosureController {
         try {
             int index = enclosureListView.getSelectionModel().getSelectedIndex();
             Animal selectedAnimal = (Animal) enclosure.get(index);
-            newAnimalView(pEvent, selectedAnimal, false);
+            newAnimalView(pEvent, selectedAnimal);
         }
         catch (IndexOutOfBoundsException e) {
             new Alert(Alert.AlertType.ERROR, "Nothing Selected", ButtonType.OK).show();
@@ -67,7 +70,7 @@ public class EnclosureController {
 
     @FXML
     public void onAddButtonClick(ActionEvent pEvent) throws IOException {
-        newAnimalView(pEvent,null, true);
+        newAddAnimalView(pEvent);
     }
 
     @FXML
@@ -82,23 +85,35 @@ public class EnclosureController {
         }
     }
 
-    public static void newAnimalView(ActionEvent pEvent, Animal pSelectedAnimal, boolean pIsAddView) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(ZooApplication.class.getResource(pIsAddView? "addAnimalView.fxml" : "AnimalView.fxml"));
+    public void newAnimalView(ActionEvent pEvent, Animal pSelectedAnimal) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(ZooApplication.class.getResource("AnimalView.fxml"));
         Parent view = fxmlLoader.load();
         AnimalViewController newAnimalController = fxmlLoader.getController();
-        Scene nextScene = new Scene(view, 500, 500);
+        Scene nextScene = new Scene(view);
         Stage nextStage = new Stage();
         nextStage.setScene(nextScene);
-        if (pSelectedAnimal != null) {
-            newAnimalController.setAnimal(pSelectedAnimal);
-            nextStage.setTitle(pSelectedAnimal.getName());
-        }
-        else {
-            nextStage.setTitle("New Animal");
-        }
+        newAnimalController.setAnimal(pSelectedAnimal);
+        nextStage.setTitle(pSelectedAnimal.getName());
         nextStage.initModality(Modality.WINDOW_MODAL);
         nextStage.initOwner(((Node) pEvent.getSource()).getScene().getWindow());
         nextStage.setResizable(false);
         nextStage.showAndWait();
+        this.enclosureListView.setItems(FXCollections.observableArrayList(enclosure.getItems()));
+    }
+
+    public void newAddAnimalView(ActionEvent pEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(ZooApplication.class.getResource("AddAnimalView.fxml"));
+        Parent view = fxmlLoader.load();
+        AddAnimalViewController newAddAnimalController = fxmlLoader.getController();
+        Scene nextScene = new Scene(view);
+        Stage nextStage = new Stage();
+        nextStage.setScene(nextScene);
+        newAddAnimalController.setEnclosure(this.enclosure);
+        nextStage.setTitle("New Animal");
+        nextStage.initModality(Modality.WINDOW_MODAL);
+        nextStage.initOwner(((Node) pEvent.getSource()).getScene().getWindow());
+        nextStage.setResizable(false);
+        nextStage.showAndWait();
+        this.enclosureListView.setItems(FXCollections.observableArrayList(enclosure.getItems()));
     }
 }

@@ -16,7 +16,7 @@ public class Enclosure implements EnclosureCollection {
     public List<String> getItems() {
         List<String> items = new ArrayList<>();
         for (Animal animal : this.aAnimals) {
-            items.add(animal.getName());
+            items.add(animal.getName() + " (" + animal.getAge() + ")");
         }
         return items;
     }

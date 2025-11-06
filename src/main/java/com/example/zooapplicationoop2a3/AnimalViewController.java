@@ -35,9 +35,6 @@ public class AnimalViewController {
     @FXML
     private TextField ageTextField;
 
-    @FXML
-    private TextField typeTextField;
-
     /** The currently selected {@link Animal} being viewed or edited. */
     private Animal currentAnimal;
 
@@ -65,16 +62,12 @@ public class AnimalViewController {
      * @param event the {@link ActionEvent} triggered by clicking the Save button
      */
     @FXML
-    protected void onSaveButtonCLick(ActionEvent event) {
+    protected void onSaveButtonClick(ActionEvent event) {
         currentAnimal.setName(nameTextField.getText());
         try {
             currentAnimal.setAge(Integer.parseInt(ageTextField.getText()));
         } catch (NumberFormatException e) {
             ageTextField.setText("Age is Invalid");
-        }
-        if (typeTextField != null) {
-            if (typeTextField.getText().equalsIgnoreCase("cougar")) {
-            }
         }
         onCancelButtonClick(event);
     }
