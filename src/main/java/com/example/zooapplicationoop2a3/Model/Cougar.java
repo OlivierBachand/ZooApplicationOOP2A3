@@ -1,4 +1,5 @@
-package com.example.zooapplicationoop2a3;
+package com.example.zooapplicationoop2a3.Model;
+
 /**
  * The {@code Cougar} class represents a cougar within the Zoo Management System.
  * <p>

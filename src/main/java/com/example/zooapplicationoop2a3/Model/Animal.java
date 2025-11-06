@@ -1,4 +1,4 @@
-package com.example.zooapplicationoop2a3;
+package com.example.zooapplicationoop2a3.Model;
 
 /**
  * The {@code Animal} class represents an abstract base model for all animals in the Zoo Management System.

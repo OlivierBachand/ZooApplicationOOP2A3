@@ -1,5 +1,6 @@
-package com.example.zooapplicationoop2a3;
+package com.example.zooapplicationoop2a3.Controllers;
 
+import com.example.zooapplicationoop2a3.Model.*;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;

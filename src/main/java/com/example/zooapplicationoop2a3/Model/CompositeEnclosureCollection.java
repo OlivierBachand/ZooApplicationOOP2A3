@@ -1,6 +1,4 @@
-package com.example.zooapplicationoop2a3;
-
-import javafx.collections.ObservableList;
+package com.example.zooapplicationoop2a3.Model;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,5 +1,6 @@
-package com.example.zooapplicationoop2a3;
+package com.example.zooapplicationoop2a3.Controllers;
 
+import com.example.zooapplicationoop2a3.Model.Animal;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;

@@ -1,5 +1,9 @@
-package com.example.zooapplicationoop2a3;
+package com.example.zooapplicationoop2a3.Controllers;
 
+import com.example.zooapplicationoop2a3.Model.CompositeEnclosureCollection;
+import com.example.zooapplicationoop2a3.Model.Enclosure;
+import com.example.zooapplicationoop2a3.Model.EnclosureCollection;
+import com.example.zooapplicationoop2a3.ZooApplication;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

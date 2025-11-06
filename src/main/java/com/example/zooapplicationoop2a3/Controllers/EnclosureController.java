@@ -1,8 +1,10 @@
-package com.example.zooapplicationoop2a3;
+package com.example.zooapplicationoop2a3.Controllers;
 
+import com.example.zooapplicationoop2a3.Model.Animal;
+import com.example.zooapplicationoop2a3.Model.Enclosure;
+import com.example.zooapplicationoop2a3.ZooApplication;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,7 +16,6 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.Collections;
 
 public class EnclosureController {
     Enclosure enclosure;

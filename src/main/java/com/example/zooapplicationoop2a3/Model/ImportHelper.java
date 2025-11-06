@@ -1,4 +1,4 @@
-package com.example.zooapplicationoop2a3;
+package com.example.zooapplicationoop2a3.Model;
 
 public class ImportHelper {
 

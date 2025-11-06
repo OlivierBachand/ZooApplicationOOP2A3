@@ -1,4 +1,4 @@
-package com.example.zooapplicationoop2a3;
+package com.example.zooapplicationoop2a3.Model;
 
 import java.util.ArrayList;
 import java.util.List;
