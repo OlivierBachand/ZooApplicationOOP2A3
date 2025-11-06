@@ -5,11 +5,11 @@
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="500" maxWidth="500" minHeight="500" minWidth="500" prefHeight="500" prefWidth="500" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.zooapplicationoop2a3.EnclosureController">
+<AnchorPane maxHeight="500" maxWidth="500" minHeight="500" minWidth="500" prefHeight="500" prefWidth="500" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.zooapplicationoop2a3.CompositeEnclosureCollectionController">
    <children>
       <ListView fx:id="aCECListView" layoutX="91.0" layoutY="66.0" prefHeight="307.0" prefWidth="319.0" />
       <Button layoutX="14.0" layoutY="22.0" mnemonicParsing="false" onAction="#onBackButtonClick" text="Back" />
-      <Button fx:id="aOpenButton" layoutX="206.0" layoutY="432.0" mnemonicParsing="false" onAction="#onEditButtonClick" prefHeight="25.0" prefWidth="90.0" text="Open" />
+      <Button fx:id="aOpenButton" layoutX="206.0" layoutY="432.0" mnemonicParsing="false" onAction="#onOpenButtonClick" prefHeight="25.0" prefWidth="90.0" text="Open" />
       <Button layoutX="441.0" layoutY="22.0" mnemonicParsing="false" onAction="#onCloseButtonClick" text="Close" />
       <Label fx:id="aBreadCrumbsLabel" layoutX="91.0" layoutY="26.0" prefHeight="17.0" prefWidth="319.0" />
    </children>

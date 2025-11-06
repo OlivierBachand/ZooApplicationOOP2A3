@@ -56,12 +56,13 @@ public class AnimalViewController {
      * Updates the {@link Animal}'s name and age based on user input.
      * If the age input is invalid, an error message is shown in the age text field.
      * Once saving is done, the view window is closed.
+     * If there is a {@code typeTextField}, creates a new animal with the provided information instead
      * </p>
      *
      * @param event the {@link ActionEvent} triggered by clicking the Save button
      */
     @FXML
-    protected void onSaveButtonCLick(ActionEvent event) {
+    protected void onSaveButtonClick(ActionEvent event) {
         currentAnimal.setName(nameTextField.getText());
         try {
             currentAnimal.setAge(Integer.parseInt(ageTextField.getText()));

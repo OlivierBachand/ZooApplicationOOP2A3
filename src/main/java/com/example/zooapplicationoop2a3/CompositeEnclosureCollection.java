@@ -22,12 +22,7 @@ public class CompositeEnclosureCollection implements EnclosureCollection {
     public List<String> getItems() {
         List<String> items = new ArrayList<>();
         for (EnclosureCollection enclosureCollection : this.aEnclosureCollections) {
-            if (enclosureCollection instanceof CompositeEnclosureCollection) {
-                items.add(((CompositeEnclosureCollection) enclosureCollection).aName);
-            }
-//            else {
-//                items.add(((Enclosure) enclosureCollection).aName);
-//            }
+            items.add(enclosureCollection.getName());
         }
         return items;
     }
