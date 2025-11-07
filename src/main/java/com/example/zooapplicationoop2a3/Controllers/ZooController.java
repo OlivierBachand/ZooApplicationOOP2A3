@@ -7,6 +7,10 @@ import javafx.fxml.FXML;
 
 import java.io.IOException;
 
+/**
+ * Controller for zoo-view.fxml
+ * @author Olivier Bachand
+ */
 public class ZooController {
     CompositeEnclosureCollection bigCats = ImportHelper.createAnimals();
 

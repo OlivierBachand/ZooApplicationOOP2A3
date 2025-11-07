@@ -27,7 +27,7 @@ public class Enclosure implements EnclosureCollection {
     }
 
     @Override
-    public Object get(int pIndex) {
+    public Animal get(int pIndex) {
         return this.aAnimals.get(pIndex);
     }
 
