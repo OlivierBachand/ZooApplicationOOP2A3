@@ -61,7 +61,7 @@ public class EnclosureController {
     public void onEditButtonClick(ActionEvent pEvent) throws IOException {
         try {
             int index = enclosureListView.getSelectionModel().getSelectedIndex();
-            Animal selectedAnimal = (Animal) enclosure.get(index);
+            Animal selectedAnimal = enclosure.get(index);
             newAnimalView(pEvent, selectedAnimal);
         }
         catch (IndexOutOfBoundsException e) {
