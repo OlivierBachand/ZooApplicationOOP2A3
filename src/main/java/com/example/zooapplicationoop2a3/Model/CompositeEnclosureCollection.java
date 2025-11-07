@@ -36,6 +36,11 @@ public class CompositeEnclosureCollection implements EnclosureCollection {
         this.aEnclosureCollections.add(pEnclosureCollection);
     }
 
+    /**
+     * Makes a {@link List} and puts all the names of the {@link EnclosureCollection} in it
+     * using their getName() method.
+     * @return a {@link List} of strings
+     */
     @Override
     public List<String> getItems() {
         List<String> items = new ArrayList<>();
@@ -45,11 +50,20 @@ public class CompositeEnclosureCollection implements EnclosureCollection {
         return items;
     }
 
+    /**
+     * Gets the name of the instance.
+     * @return {@code aName}
+     */
     @Override
     public String getName() {
         return this.aName;
     }
 
+    /**
+     * Gets an {@link EnclosureCollection} from {@code aEnclosureCollections} from an index.
+     * @param pIndex index of the List
+     * @return The {@link EnclosureCollection} at the {@code pIndex}
+     */
     @Override
     public EnclosureCollection get(int pIndex) {
         return this.aEnclosureCollections.get(pIndex);
