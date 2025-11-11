@@ -26,30 +26,30 @@ public class EnclosureController {
     /**
      * The current enclosure being viewed or modified.
      * */
-    Enclosure enclosure;
+    public Enclosure enclosure;
 
     /**
      * Breadcrumb string used for navigation context.
      * */
-    String aBreadCrumbs;
+    public String aBreadCrumbs;
 
     /**
      * ListView displaying the animals in the enclosure.
      * */
     @FXML
-    public ListView<String> enclosureListView;
+    private ListView<String> enclosureListView;
 
     /**
      * Button used for editing a selected animal.
      * */
     @FXML
-    public Button editButton;
+    private Button editButton;
 
     /**
      * Label showing the breadcrumb navigation path.
      * */
     @FXML
-    public Label breadCrumbsLabel;
+    private Label breadCrumbsLabel;
 
     /**
      * Initializes event handlers for the Enclosure view.
@@ -82,7 +82,7 @@ public class EnclosureController {
      * Closes the current enclosure window and returns to the previous screen.
      */
     @FXML
-    public void onBackButtonClick() {
+    private void onBackButtonClick() {
         Stage currentStage = (Stage) this.enclosureListView.getScene().getWindow();
         currentStage.close();
     }
@@ -92,7 +92,7 @@ public class EnclosureController {
      * Exits the entire application.
      */
     @FXML
-    public void onCloseButtonClick() {
+    private void onCloseButtonClick() {
         Platform.exit();
     }
 
@@ -104,7 +104,7 @@ public class EnclosureController {
      * @throws IOException if the FXML file for the animal view cannot be loaded
      */
     @FXML
-    public void onEditButtonClick(ActionEvent pEvent) throws IOException {
+    private void onEditButtonClick(ActionEvent pEvent) throws IOException {
         try {
             int index = enclosureListView.getSelectionModel().getSelectedIndex();
             Animal selectedAnimal = enclosure.get(index);
@@ -123,7 +123,7 @@ public class EnclosureController {
      * @throws IOException if the FXML file for the add animal view cannot be loaded
      */
     @FXML
-    public void onAddButtonClick(ActionEvent pEvent) throws IOException {
+    private void onAddButtonClick(ActionEvent pEvent) throws IOException {
         newAddAnimalView(pEvent);
     }
 
@@ -132,7 +132,7 @@ public class EnclosureController {
      * Removes the selected animal from both the model and the list view.
      */
     @FXML
-    public void onDeleteButtonClick() {
+    private void onDeleteButtonClick() {
         try {
             int index = enclosureListView.getSelectionModel().getSelectedIndex();
             this.enclosure.removeAnimal(index);
@@ -150,7 +150,7 @@ public class EnclosureController {
      * @param pSelectedAnimal the {@link Animal} to display
      * @throws IOException if the FXML file for the animal view cannot be loaded
      */
-    public void newAnimalView(ActionEvent pEvent, Animal pSelectedAnimal) throws IOException {
+    private void newAnimalView(ActionEvent pEvent, Animal pSelectedAnimal) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(ZooApplication.class.getResource("AnimalView.fxml"));
         Parent view = fxmlLoader.load();
         AnimalViewController newAnimalController = fxmlLoader.getController();
@@ -172,7 +172,7 @@ public class EnclosureController {
      * @param pEvent the triggering action event
      * @throws IOException if the FXML file for the add animal view cannot be loaded
      */
-    public void newAddAnimalView(ActionEvent pEvent) throws IOException {
+    private void newAddAnimalView(ActionEvent pEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(ZooApplication.class.getResource("AddAnimalView.fxml"));
         Parent view = fxmlLoader.load();
         AddAnimalViewController newAddAnimalController = fxmlLoader.getController();
