@@ -152,7 +152,7 @@ public class CompositeEnclosureCollectionController {
      * @param pBreadCrumbs The bread crumbs for the next view.
      * @throws IOException because of the load() method.
      */
-    public static void newEnclosureView(ActionEvent pEvent, Enclosure pSelectedEnclosure, String pBreadCrumbs) throws IOException {
+    private void newEnclosureView(ActionEvent pEvent, Enclosure pSelectedEnclosure, String pBreadCrumbs) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(ZooApplication.class.getResource("enclosure-view.fxml"));
         Parent view = fxmlLoader.load();
         EnclosureController newEnclosureController = fxmlLoader.getController();

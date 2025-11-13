@@ -17,7 +17,7 @@ public class CompositeEnclosureCollection implements EnclosureCollection {
     /**
      * Represents the name of the {@link CompositeEnclosureCollection}
      */
-    private String aName;
+    private final String aName;
 
     /**
      * Initializes {@code aEnclosureCollections} and {@code aName}
